@@ -28,7 +28,7 @@ for j in urls:
            print(Fore.RED+"[-] DKIM is enabled in"+j.strip())
            dkim+=1
        if dkim == 0:
-           print(Fore.MAGENTA+"[+] DKIM doesn't seem to be enabled")
+           print(Fore.MAGENTA+"[+] DKIM doesn't seem to be enabled right away, but check the README.md of the tool")
        print(Fore.WHITE+"Mailspoof analysis:")
        os.system(sys.argv[2].strip()+" -d "+j.strip())
        print("\nIf some SPF misconfiguration is mentioned in the output above please go to: https://emkei.cz/ to send an email PoC so you can demonstrate you are able to spoof the domain source address") 
