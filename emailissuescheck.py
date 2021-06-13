@@ -30,7 +30,7 @@ for j in urls:
        if dkim == 0:
            print(Fore.MAGENTA+"[+] DKIM doesn't seem to be enabled")
        print(Fore.WHITE+"Mailspoof analysis:")
-       os.system("/home/stark0de/.local/bin/mailspoof -d "+j.strip())
+       os.system(sys.argv[2].strip()+" -d "+j.strip())
        print("\nIf some SPF misconfiguration is mentioned in the output above please go to: https://emkei.cz/ to send an email PoC so you can demonstrate you are able to spoof the domain source address") 
     except dns.resolver.NoAnswer:
         #print(e,type(e))
