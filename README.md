@@ -16,7 +16,7 @@ sudo updatedb
 
 locate mailspoof # get path of mailspoof, mine was in /home/stark0de/.local/bin/mailspoof
 
-python3 emailissues.py listwithdomains mailspoofpath verbose
+python3 emailissues.py /pathto/listwithdomains mailspoofpath verbose
 
 The verbose option will just print the errors and the reason of the errors
 ```
