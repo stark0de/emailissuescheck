@@ -7,8 +7,8 @@ import subprocess
 
 init()
 
-if len(sys.argv) < 2:
-    print(Fore.WHITE+"Usage: python3 emailissuescheck.py listwithdomains verbose")
+if len(sys.argv) < 3:
+    print(Fore.WHITE+"Usage: python3 emailissuescheck.py listwithdomains mailspoofpath verbose")
     sys.exit()
 
 urls=open(sys.argv[1],"r").readlines()
@@ -34,10 +34,10 @@ for j in urls:
        print("\nIf some SPF misconfiguration is mentioned in the output above please go to: https://emkei.cz/ to send an email PoC so you can demonstrate you are able to spoof the domain source address") 
     except dns.resolver.NoAnswer:
         #print(e,type(e))
-        if len(sys.argv) == 3 and sys.argv[2] == "verbose":
+        if len(sys.argv) == 4 and sys.argv[3] == "verbose":
            print(Fore.RED+"[-] No TXT record found in"+j.strip())
         continue
     except dns.resolver.NXDOMAIN:
-        if len(sys.argv) == 3 and sys.argv[2] == "verbose":
+        if len(sys.argv) == 4 and sys.argv[3] == "verbose":
            print(Fore.RED+"[-] Non-existing domain "+j.strip())
         continue
