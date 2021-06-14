@@ -41,3 +41,8 @@ for j in urls:
         if len(sys.argv) == 4 and sys.argv[3] == "verbose":
            print(Fore.RED+"[-] Non-existing domain "+j.strip())
         continue
+    except dns.exception.Timeout:
+        if len(sys.argv) == 4 and sys.argv[3] == "verbose":
+           print(Fore.RED+"[-] DNS timeout in domain "+j.strip())
+        continue
+        
