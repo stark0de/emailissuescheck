@@ -10,6 +10,8 @@ git clone https://github.com/stark0de/emailissuescheck
 
 cd emailissuescheck
 
+pip3 install -r requirements.txt
+
 pip install mailspoof
 
 sudo updatedb
